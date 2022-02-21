@@ -1151,14 +1151,14 @@ last_daily = null;
 no_localstorage = false;
 
 try {
-    last_daily = window.localStorage.getItem("last_daily");
+    last_daily = window.localStorage.getItem("oct_last_daily");
 } catch (e) {
     no_localstorage = true;
 }
 
 function time_to_next() {
     try {
-        if (last_daily == null) last_daily = window.localStorage.getItem("last_daily");
+        if (last_daily == null) last_daily = window.localStorage.getItem("oct_last_daily");
     } catch (e) {
         no_localstorage = true;
     }
@@ -1209,10 +1209,10 @@ function restart() {
         last_daily = seed;
         if (!no_localstorage) {
             try {
-                var prevDaily = window.localStorage.getItem("last_daily");
-                window.localStorage.setItem("last_daily", seed);
+                var prevDaily = window.localStorage.getItem("oct_last_daily");
+                window.localStorage.setItem("oct_last_daily", seed);
                 if (String(seed) !== prevDaily) {
-                    window.localStorage.setItem("daily_guesses", "");
+                    window.localStorage.setItem("oct_daily_guesses", "");
                 }
             } catch (e) {
                 no_localstorage = true;
@@ -1222,12 +1222,12 @@ function restart() {
     } else if (free_mode) {
         if (!no_localstorage) {
             try {
-                var freeSeed = window.localStorage.getItem("last_free");
+                var freeSeed = window.localStorage.getItem("oct_last_free");
                 if (freeSeed) {
                     rnd = new MersenneTwister(Number(freeSeed));
                 } else {
                     freeSeed = new Date().getTime();
-                    window.localStorage.setItem("last_free", freeSeed);
+                    window.localStorage.setItem("oct_last_free", freeSeed);
                     rnd = new MersenneTwister(freeSeed);
                 }
             } catch (e) {
@@ -1278,7 +1278,7 @@ function restart() {
 
     if ((daily_mode || free_mode) && !no_localstorage) {
         try {
-            ls_guesses = window.localStorage.getItem(daily_mode ? "daily_guesses" : "free_guesses")
+            ls_guesses = window.localStorage.getItem(daily_mode ? "oct_daily_guesses" : "oct_free_guesses")
             ls_guesses = ls_guesses ? ls_guesses.split(",") : [];
             if (ls_guesses.length > 0) {
                 restoring_game = true
@@ -1306,7 +1306,7 @@ function restart() {
 function update_local_storage() {
     if (!no_localstorage && (daily_mode || free_mode)) {
         try {
-            window.localStorage.setItem(daily_mode ? "daily_guesses" : "free_guesses", guesses.join(","));
+            window.localStorage.setItem(daily_mode ? "oct_daily_guesses" : "oct_free_guesses", guesses.join(","));
         } catch (e) {
             no_localstorage = true;
         }
@@ -1442,9 +1442,9 @@ acquire("share_clipboard").onclick = function() {
 // }
 acquire("reset_free").onclick = function() {
     vibrate();
-    if (isInWebViewiOS || confirm("Are you sure you want to start a new Free Octordle? (The current game will be deleted)")) {
-        window.localStorage.removeItem("free_guesses");
-        window.localStorage.removeItem("last_free");
+    if (isInWebViewiOS || confirm("Are you sure you want to start a new Free Octoordle? (The current game will be deleted)")) {
+        window.localStorage.removeItem("oct_free_guesses");
+        window.localStorage.removeItem("oct_last_free");
         initFree();
     }
 }
