@@ -427,8 +427,8 @@ table {
                 <li>The bottom right word has the O in the right spot and the D in the wrong spot.</li>
             </ol>
         </p>
-        <p>You have 9 guesses to get all 4 words correct. Good luck!</p>
-        <p>A new QUORDLE will be available each day!<br><br></p>
+        <p>You have 13 guesses to get all 8 words correct. Good luck!</p>
+        <p>A new Octordle will be available each day!<br><br></p>
     </div>
     <div id="game" style="display: none;flex-direction: column;" width="100%">
         <table style="width: 100%;">
@@ -451,301 +451,79 @@ table {
         <div style="width: 100%;flex: 1;overflow: auto;">
             <table style="width: 100%; border-spacing:0px;">
                 <tr>
-                    <td style="width: 50%; padding:0px;">
-                        <table style="width: 100%;" class="table_guesses">
-                            <tr>
-                                <td class="box button" width="20%" id="box1,1,1"></td>
-                                <td class="box button" width="20%" id="box1,1,2"></td>
-                                <td class="box button" width="20%" id="box1,1,3"></td>
-                                <td class="box button" width="20%" id="box1,1,4"></td>
-                                <td class="box button" width="20%" id="box1,1,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,2,1"></td>
-                                <td class="box button" width="20%" id="box1,2,2"></td>
-                                <td class="box button" width="20%" id="box1,2,3"></td>
-                                <td class="box button" width="20%" id="box1,2,4"></td>
-                                <td class="box button" width="20%" id="box1,2,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,3,1"></td>
-                                <td class="box button" width="20%" id="box1,3,2"></td>
-                                <td class="box button" width="20%" id="box1,3,3"></td>
-                                <td class="box button" width="20%" id="box1,3,4"></td>
-                                <td class="box button" width="20%" id="box1,3,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,4,1"></td>
-                                <td class="box button" width="20%" id="box1,4,2"></td>
-                                <td class="box button" width="20%" id="box1,4,3"></td>
-                                <td class="box button" width="20%" id="box1,4,4"></td>
-                                <td class="box button" width="20%" id="box1,4,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,5,1"></td>
-                                <td class="box button" width="20%" id="box1,5,2"></td>
-                                <td class="box button" width="20%" id="box1,5,3"></td>
-                                <td class="box button" width="20%" id="box1,5,4"></td>
-                                <td class="box button" width="20%" id="box1,5,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,6,1"></td>
-                                <td class="box button" width="20%" id="box1,6,2"></td>
-                                <td class="box button" width="20%" id="box1,6,3"></td>
-                                <td class="box button" width="20%" id="box1,6,4"></td>
-                                <td class="box button" width="20%" id="box1,6,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,7,1"></td>
-                                <td class="box button" width="20%" id="box1,7,2"></td>
-                                <td class="box button" width="20%" id="box1,7,3"></td>
-                                <td class="box button" width="20%" id="box1,7,4"></td>
-                                <td class="box button" width="20%" id="box1,7,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,8,1"></td>
-                                <td class="box button" width="20%" id="box1,8,2"></td>
-                                <td class="box button" width="20%" id="box1,8,3"></td>
-                                <td class="box button" width="20%" id="box1,8,4"></td>
-                                <td class="box button" width="20%" id="box1,8,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box1,9,1"></td>
-                                <td class="box button" width="20%" id="box1,9,2"></td>
-                                <td class="box button" width="20%" id="box1,9,3"></td>
-                                <td class="box button" width="20%" id="box1,9,4"></td>
-                                <td class="box button" width="20%" id="box1,9,5"></td>
-                            </tr>
-                        </table>
+                    <td style="width: 50%; padding:0px;" id="box-holder-1">
                     </td>
-                    <td style="width: 50%; padding:0px;">
-                        <table style="width: 100%;" class="table_guesses">
-                            <tr>
-                                <td class="box button" width="20%" id="box2,1,1"></td>
-                                <td class="box button" width="20%" id="box2,1,2"></td>
-                                <td class="box button" width="20%" id="box2,1,3"></td>
-                                <td class="box button" width="20%" id="box2,1,4"></td>
-                                <td class="box button" width="20%" id="box2,1,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,2,1"></td>
-                                <td class="box button" width="20%" id="box2,2,2"></td>
-                                <td class="box button" width="20%" id="box2,2,3"></td>
-                                <td class="box button" width="20%" id="box2,2,4"></td>
-                                <td class="box button" width="20%" id="box2,2,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,3,1"></td>
-                                <td class="box button" width="20%" id="box2,3,2"></td>
-                                <td class="box button" width="20%" id="box2,3,3"></td>
-                                <td class="box button" width="20%" id="box2,3,4"></td>
-                                <td class="box button" width="20%" id="box2,3,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,4,1"></td>
-                                <td class="box button" width="20%" id="box2,4,2"></td>
-                                <td class="box button" width="20%" id="box2,4,3"></td>
-                                <td class="box button" width="20%" id="box2,4,4"></td>
-                                <td class="box button" width="20%" id="box2,4,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,5,1"></td>
-                                <td class="box button" width="20%" id="box2,5,2"></td>
-                                <td class="box button" width="20%" id="box2,5,3"></td>
-                                <td class="box button" width="20%" id="box2,5,4"></td>
-                                <td class="box button" width="20%" id="box2,5,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,6,1"></td>
-                                <td class="box button" width="20%" id="box2,6,2"></td>
-                                <td class="box button" width="20%" id="box2,6,3"></td>
-                                <td class="box button" width="20%" id="box2,6,4"></td>
-                                <td class="box button" width="20%" id="box2,6,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,7,1"></td>
-                                <td class="box button" width="20%" id="box2,7,2"></td>
-                                <td class="box button" width="20%" id="box2,7,3"></td>
-                                <td class="box button" width="20%" id="box2,7,4"></td>
-                                <td class="box button" width="20%" id="box2,7,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,8,1"></td>
-                                <td class="box button" width="20%" id="box2,8,2"></td>
-                                <td class="box button" width="20%" id="box2,8,3"></td>
-                                <td class="box button" width="20%" id="box2,8,4"></td>
-                                <td class="box button" width="20%" id="box2,8,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box2,9,1"></td>
-                                <td class="box button" width="20%" id="box2,9,2"></td>
-                                <td class="box button" width="20%" id="box2,9,3"></td>
-                                <td class="box button" width="20%" id="box2,9,4"></td>
-                                <td class="box button" width="20%" id="box2,9,5"></td>
-                            </tr>
-                        </table>
+
+                    <td style="width: 50%; padding:0px;" id="box-holder-2">
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 50%; padding:0px;">
-                        <table style="width: 100%;" class="table_guesses">
-                            <tr>
-                                <td class="box button" width="20%" id="box3,1,1"></td>
-                                <td class="box button" width="20%" id="box3,1,2"></td>
-                                <td class="box button" width="20%" id="box3,1,3"></td>
-                                <td class="box button" width="20%" id="box3,1,4"></td>
-                                <td class="box button" width="20%" id="box3,1,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,2,1"></td>
-                                <td class="box button" width="20%" id="box3,2,2"></td>
-                                <td class="box button" width="20%" id="box3,2,3"></td>
-                                <td class="box button" width="20%" id="box3,2,4"></td>
-                                <td class="box button" width="20%" id="box3,2,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,3,1"></td>
-                                <td class="box button" width="20%" id="box3,3,2"></td>
-                                <td class="box button" width="20%" id="box3,3,3"></td>
-                                <td class="box button" width="20%" id="box3,3,4"></td>
-                                <td class="box button" width="20%" id="box3,3,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,4,1"></td>
-                                <td class="box button" width="20%" id="box3,4,2"></td>
-                                <td class="box button" width="20%" id="box3,4,3"></td>
-                                <td class="box button" width="20%" id="box3,4,4"></td>
-                                <td class="box button" width="20%" id="box3,4,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,5,1"></td>
-                                <td class="box button" width="20%" id="box3,5,2"></td>
-                                <td class="box button" width="20%" id="box3,5,3"></td>
-                                <td class="box button" width="20%" id="box3,5,4"></td>
-                                <td class="box button" width="20%" id="box3,5,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,6,1"></td>
-                                <td class="box button" width="20%" id="box3,6,2"></td>
-                                <td class="box button" width="20%" id="box3,6,3"></td>
-                                <td class="box button" width="20%" id="box3,6,4"></td>
-                                <td class="box button" width="20%" id="box3,6,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,7,1"></td>
-                                <td class="box button" width="20%" id="box3,7,2"></td>
-                                <td class="box button" width="20%" id="box3,7,3"></td>
-                                <td class="box button" width="20%" id="box3,7,4"></td>
-                                <td class="box button" width="20%" id="box3,7,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,8,1"></td>
-                                <td class="box button" width="20%" id="box3,8,2"></td>
-                                <td class="box button" width="20%" id="box3,8,3"></td>
-                                <td class="box button" width="20%" id="box3,8,4"></td>
-                                <td class="box button" width="20%" id="box3,8,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box3,9,1"></td>
-                                <td class="box button" width="20%" id="box3,9,2"></td>
-                                <td class="box button" width="20%" id="box3,9,3"></td>
-                                <td class="box button" width="20%" id="box3,9,4"></td>
-                                <td class="box button" width="20%" id="box3,9,5"></td>
-                            </tr>
-                        </table>
+                    <td>&nbsp;</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 50%; padding:0px;" id="box-holder-3">
                     </td>
-                    <td style="width: 50%; padding:0px;">
-                        <table style="width: 100%;" class="table_guesses">
-                            <tr>
-                                <td class="box button" width="20%" id="box4,1,1"></td>
-                                <td class="box button" width="20%" id="box4,1,2"></td>
-                                <td class="box button" width="20%" id="box4,1,3"></td>
-                                <td class="box button" width="20%" id="box4,1,4"></td>
-                                <td class="box button" width="20%" id="box4,1,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,2,1"></td>
-                                <td class="box button" width="20%" id="box4,2,2"></td>
-                                <td class="box button" width="20%" id="box4,2,3"></td>
-                                <td class="box button" width="20%" id="box4,2,4"></td>
-                                <td class="box button" width="20%" id="box4,2,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,3,1"></td>
-                                <td class="box button" width="20%" id="box4,3,2"></td>
-                                <td class="box button" width="20%" id="box4,3,3"></td>
-                                <td class="box button" width="20%" id="box4,3,4"></td>
-                                <td class="box button" width="20%" id="box4,3,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,4,1"></td>
-                                <td class="box button" width="20%" id="box4,4,2"></td>
-                                <td class="box button" width="20%" id="box4,4,3"></td>
-                                <td class="box button" width="20%" id="box4,4,4"></td>
-                                <td class="box button" width="20%" id="box4,4,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,5,1"></td>
-                                <td class="box button" width="20%" id="box4,5,2"></td>
-                                <td class="box button" width="20%" id="box4,5,3"></td>
-                                <td class="box button" width="20%" id="box4,5,4"></td>
-                                <td class="box button" width="20%" id="box4,5,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,6,1"></td>
-                                <td class="box button" width="20%" id="box4,6,2"></td>
-                                <td class="box button" width="20%" id="box4,6,3"></td>
-                                <td class="box button" width="20%" id="box4,6,4"></td>
-                                <td class="box button" width="20%" id="box4,6,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,7,1"></td>
-                                <td class="box button" width="20%" id="box4,7,2"></td>
-                                <td class="box button" width="20%" id="box4,7,3"></td>
-                                <td class="box button" width="20%" id="box4,7,4"></td>
-                                <td class="box button" width="20%" id="box4,7,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,8,1"></td>
-                                <td class="box button" width="20%" id="box4,8,2"></td>
-                                <td class="box button" width="20%" id="box4,8,3"></td>
-                                <td class="box button" width="20%" id="box4,8,4"></td>
-                                <td class="box button" width="20%" id="box4,8,5"></td>
-                            </tr>
-                            <tr>
-                                <td class="box button" width="20%" id="box4,9,1"></td>
-                                <td class="box button" width="20%" id="box4,9,2"></td>
-                                <td class="box button" width="20%" id="box4,9,3"></td>
-                                <td class="box button" width="20%" id="box4,9,4"></td>
-                                <td class="box button" width="20%" id="box4,9,5"></td>
-                            </tr>
-                        </table>
+
+                    <td style="width: 50%; padding:0px;" id="box-holder-4">
                     </td>
                 </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 50%; padding:0px;" id="box-holder-5">
+                    </td>
+
+                    <td style="width: 50%; padding:0px;" id="box-holder-6">
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 50%; padding:0px;" id="box-holder-7">
+                    </td>
+
+                    <td style="width: 50%; padding:0px;" id="box-holder-8">
+                    </td>
+                </tr>
+
             </table>
         </div>
-        <div id="post_game" style="">
+        <div id="post_game">
             <table width="100%">
-                <tr height="20%">
+                <tr height="14.2%">
                     <td rowspan=5 style="width:50%;">
                         <textarea class="box" style="width:100%; border: 1px solid;overflow:auto;resize:none;" rows=25 id="share_content">test</textarea>
                     </td>
                     <td style="font-size:75%; width:50%; text-align:center; vertical-align:bottom;" id="answer12">&nbsp;</td>
                 </tr>
-                <tr height="20%">
+                <tr height="14.2%">
                     <td style="font-size:75%; width:50%; text-align:center; vertical-align:top;" id="answer34">&nbsp;</td>
                 </tr>
-                <tr height="20%">
+                <tr height="14.2%">
+                    <td style="font-size:75%; width:50%; text-align:center; vertical-align:top;" id="answer56">&nbsp;</td>
+                </tr>
+                <tr height="14.2%">
+                    <td style="font-size:75%; width:50%; text-align:center; vertical-align:top;" id="answer78">&nbsp;</td>
+                </tr>
+                <tr height="14.2%">
                     <td class="box" style="border: none; border-style: double;font-size:50%;width:50%;cursor:pointer;visibility:hidden;padding:8px;" id="share">
                         share
                     </td>
                 </tr>
-                <tr height="20%">
+                <!-- <tr height="14.2%">
                     <td class="box" style="border: none; border-style: double;font-size:50%;width:50%;cursor:pointer;visibility:hidden;padding:8px;" id="share_image">
                         share as image (twitter)
                     </td>
-                </tr>
-                <tr height="20%">
+                </tr> -->
+                <tr height="14.2%">
                     <td class="box" style="border: none; border-style: double;font-size:50%;width:50%;cursor:pointer;padding:8px;" id="share_clipboard">
                         copy to clipboard
                     </td>
@@ -799,9 +577,150 @@ table {
         </table>
     </div>
 </div>
+
 <canvas id="canvas" width="176" height="352" style="position:absolute;left:0;top:0;display:none;"></canvas>
 <script src="https://v6p9d9t4.ssl.hwcdn.net/html/5162977/mersenne.js"></script>
 <script>
+
+function makeBox(boxId) {
+    const template = `<table style="width: 100%;" class="table_guesses">
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},1,1"></td>
+            <td class="box button" width="20%" id="box${boxId},1,2"></td>
+            <td class="box button" width="20%" id="box${boxId},1,3"></td>
+            <td class="box button" width="20%" id="box${boxId},1,4"></td>
+            <td class="box button" width="20%" id="box${boxId},1,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},2,1"></td>
+            <td class="box button" width="20%" id="box${boxId},2,2"></td>
+            <td class="box button" width="20%" id="box${boxId},2,3"></td>
+            <td class="box button" width="20%" id="box${boxId},2,4"></td>
+            <td class="box button" width="20%" id="box${boxId},2,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},3,1"></td>
+            <td class="box button" width="20%" id="box${boxId},3,2"></td>
+            <td class="box button" width="20%" id="box${boxId},3,3"></td>
+            <td class="box button" width="20%" id="box${boxId},3,4"></td>
+            <td class="box button" width="20%" id="box${boxId},3,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},4,1"></td>
+            <td class="box button" width="20%" id="box${boxId},4,2"></td>
+            <td class="box button" width="20%" id="box${boxId},4,3"></td>
+            <td class="box button" width="20%" id="box${boxId},4,4"></td>
+            <td class="box button" width="20%" id="box${boxId},4,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},5,1"></td>
+            <td class="box button" width="20%" id="box${boxId},5,2"></td>
+            <td class="box button" width="20%" id="box${boxId},5,3"></td>
+            <td class="box button" width="20%" id="box${boxId},5,4"></td>
+            <td class="box button" width="20%" id="box${boxId},5,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},6,1"></td>
+            <td class="box button" width="20%" id="box${boxId},6,2"></td>
+            <td class="box button" width="20%" id="box${boxId},6,3"></td>
+            <td class="box button" width="20%" id="box${boxId},6,4"></td>
+            <td class="box button" width="20%" id="box${boxId},6,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},7,1"></td>
+            <td class="box button" width="20%" id="box${boxId},7,2"></td>
+            <td class="box button" width="20%" id="box${boxId},7,3"></td>
+            <td class="box button" width="20%" id="box${boxId},7,4"></td>
+            <td class="box button" width="20%" id="box${boxId},7,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},8,1"></td>
+            <td class="box button" width="20%" id="box${boxId},8,2"></td>
+            <td class="box button" width="20%" id="box${boxId},8,3"></td>
+            <td class="box button" width="20%" id="box${boxId},8,4"></td>
+            <td class="box button" width="20%" id="box${boxId},8,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},9,1"></td>
+            <td class="box button" width="20%" id="box${boxId},9,2"></td>
+            <td class="box button" width="20%" id="box${boxId},9,3"></td>
+            <td class="box button" width="20%" id="box${boxId},9,4"></td>
+            <td class="box button" width="20%" id="box${boxId},9,5"></td>
+        </tr>
+
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},10,1"></td>
+            <td class="box button" width="20%" id="box${boxId},10,2"></td>
+            <td class="box button" width="20%" id="box${boxId},10,3"></td>
+            <td class="box button" width="20%" id="box${boxId},10,4"></td>
+            <td class="box button" width="20%" id="box${boxId},10,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},11,1"></td>
+            <td class="box button" width="20%" id="box${boxId},11,2"></td>
+            <td class="box button" width="20%" id="box${boxId},11,3"></td>
+            <td class="box button" width="20%" id="box${boxId},11,4"></td>
+            <td class="box button" width="20%" id="box${boxId},11,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},12,1"></td>
+            <td class="box button" width="20%" id="box${boxId},12,2"></td>
+            <td class="box button" width="20%" id="box${boxId},12,3"></td>
+            <td class="box button" width="20%" id="box${boxId},12,4"></td>
+            <td class="box button" width="20%" id="box${boxId},12,5"></td>
+        </tr>
+        <tr>
+            <td class="box button" width="20%" id="box${boxId},13,1"></td>
+            <td class="box button" width="20%" id="box${boxId},13,2"></td>
+            <td class="box button" width="20%" id="box${boxId},13,3"></td>
+            <td class="box button" width="20%" id="box${boxId},13,4"></td>
+            <td class="box button" width="20%" id="box${boxId},13,5"></td>
+        </tr>
+    </table>`
+
+    const container = document.createElement("div");
+    container.innerHTML = template;
+    return container.firstChild;
+}
+
+function setupBoxes() {
+    for(let box = 0; box < TOTAL_BOXES; box++) {
+        const el = makeBox(box + 1);
+        acquire(`box-holder-${box + 1}`).appendChild(el);
+    }
+}
+
+
+
+const TOTAL_LINES = 13;
+const TOTAL_COLUMNS = 5;
+const TOTAL_BOXES = 8;
+
+function forEachCell(callback) {
+    for(var line = 0; line < TOTAL_LINES; line++) {
+        for(var column = 0; column < TOTAL_COLUMNS; column++) {
+            for(var box = 0; box < TOTAL_BOXES; box++) {
+                callback(box, line, column, acquireBox(box, line, column));
+            }
+        }
+    }
+}
+
+function forEachCellForLine(line, callback) {
+    for(var column = 0; column < TOTAL_COLUMNS; column++) {
+        for(var box = 0; box < TOTAL_BOXES; box++) {
+            callback(box, column, acquireBox(box, line, column));
+        }
+    }
+}
+
+function forEachCellForLineColumn(line, column, callback) {
+    for(var box = 0; box < TOTAL_BOXES; box++) {
+            callback(box, acquireBox(box, line, column));
+        }
+}
+
+
 function el(n, t) {
     e = document.createElement(n);
     if (t) e.appendChild(t);
@@ -864,6 +783,16 @@ function append(out, t) {
 function acquire(out) {
     return document.getElementById(out);
 };
+
+function acquireBox(box, line, column) {
+    const el = acquire(`box${box + 1},${line + 1},${column + 1}`);
+
+    if(!el) {
+        debugger;
+    }
+
+    return el;
+}
 
 function random(n) {
     return (Math.random() * n) >> 0;
@@ -1088,15 +1017,19 @@ function pressKey(e) {
 
 function pk(key, keyCode) {
     if (!daily_mode && !free_mode) return;
-    if (line >= 9) return;
+    if (line >= TOTAL_LINES) return;
     if (keyCode == 8) {
         if (column <= 0) return;
         guess_current = guess_current.slice(0, guess_current.length - 1);
         column--;
-        if (answer_correct[0] < 0) clear(acquire("box1," + (line + 1) + "," + (column + 1)));
-        if (answer_correct[1] < 0) clear(acquire("box2," + (line + 1) + "," + (column + 1)));
-        if (answer_correct[2] < 0) clear(acquire("box3," + (line + 1) + "," + (column + 1)));
-        if (answer_correct[3] < 0) clear(acquire("box4," + (line + 1) + "," + (column + 1)));
+
+
+        forEachCellForLineColumn(line, column, (box, el) => {
+            if(answer_correct[box] < 0) {
+                clear(el);
+            }
+        });
+
         test_real_word(line, guess_current);
         return;
     }
@@ -1108,7 +1041,7 @@ function pk(key, keyCode) {
             column = 0;
             return;
         }
-        if (column >= 5) {
+        if (column >= TOTAL_COLUMNS) {
             if (!restoring_game && window.gtag) {
                 gtag("event", "guess", {
                     mode: daily_mode ? "daily" : "free",
@@ -1117,28 +1050,23 @@ function pk(key, keyCode) {
                 });
             }
             guesses.push(guess_current);
-            if (answer_correct[0] < 0) identify_guess(0, line, guess_current);
-            if (answer_correct[1] < 0) identify_guess(1, line, guess_current);
-            if (answer_correct[2] < 0) identify_guess(2, line, guess_current);
-            if (answer_correct[3] < 0) identify_guess(3, line, guess_current);
 
-            if (answer[0] == guess_current) {
-                answer_correct[0] = line;
-            }
-            if (answer[1] == guess_current) {
-                answer_correct[1] = line;
-            }
-            if (answer[2] == guess_current) {
-                answer_correct[2] = line;
-            }
-            if (answer[3] == guess_current) {
-                answer_correct[3] = line;
-            }
+            forEachCellForLineColumn(line, column - 1, (box, el) => {
+                if (answer_correct[box] < 0) {
+                    identify_guess(box, line, guess_current);
+                }
+
+                if (answer[box] == guess_current) {
+                    answer_correct[box] = line;
+                }
+            });
+
             line++;
             column = 0;
             guess_current = "";
 
-            if (answer_correct[0] >= 0 && answer_correct[1] >= 0 && answer_correct[2] >= 0 && answer_correct[3] >= 0) {
+            if (answer_correct[0] >= 0 && answer_correct[1] >= 0 && answer_correct[2] >= 0 && answer_correct[3] >= 0 &&
+                answer_correct[4] >= 0 && answer_correct[5] >= 0 && answer_correct[6] >= 0 && answer_correct[7] >= 0) {
                 acquire("body").style.backgroundColor = "green";
                 acquire("body").style.color = "black";
                 show_post_game(true);
@@ -1149,7 +1077,7 @@ function pk(key, keyCode) {
                         guesses: guesses
                     });
                 }
-            } else if (line >= 9) {
+            } else if (line >= TOTAL_LINES) {
                 acquire("body").style.backgroundColor = "red";
                 acquire("body").style.color = "black";
                 show_post_game(true);
@@ -1175,14 +1103,16 @@ function pk(key, keyCode) {
         return;
     }
     if ("abcdefghijklmnopqrstuvwxyz".indexOf(key) == -1) return;
-    if (column >= 5) return;
-    if (answer_correct[0] < 0) ppint(acquire("box1," + (line + 1) + "," + (column + 1)), key.toUpperCase());
-    if (answer_correct[1] < 0) ppint(acquire("box2," + (line + 1) + "," + (column + 1)), key.toUpperCase());
-    if (answer_correct[2] < 0) ppint(acquire("box3," + (line + 1) + "," + (column + 1)), key.toUpperCase());
-    if (answer_correct[3] < 0) ppint(acquire("box4," + (line + 1) + "," + (column + 1)), key.toUpperCase());
+    if (column >= TOTAL_COLUMNS) return;
+    forEachCellForLineColumn(line, column, (box, el) => {
+        if (answer_correct[box] < 0) {
+            ppint(el, key.toUpperCase());
+        }
+    });
+
     guess_current += key;
     column++;
-    if (column >= 5) {
+    if (column >= TOTAL_COLUMNS) {
         test_real_word(line, guess_current);
     }
 }
@@ -1199,7 +1129,7 @@ function show_post_game(show) {
         acquire("post_game").style.display = "";
         acquire("keyboard").style.display = "none";
         acquire("share").style.visibility = navigator.share ? "" : "hidden";
-        acquire("share_image").style.visibility = navigator.share ? "" : "hidden";
+        //acquire("share_image").style.visibility = navigator.share ? "" : "hidden";
         do_share(false, "clipboard");
     } else {
         acquire("post_game").style.display = "none";
@@ -1209,13 +1139,12 @@ function show_post_game(show) {
 
 function test_real_word(line, guess_current) {
     var real = !(allowed.indexOf(guess_current) == -1 && answers.indexOf(guess_current) == -1)
-    if (guess_current.length < 5) real = true;
-    for (var column = 0; column < 5; column++) {
-        if (answer_correct[0] < 0) acquire("box1," + (line + 1) + "," + (column + 1)).style.color = real ? "white" : "red";
-        if (answer_correct[1] < 0) acquire("box2," + (line + 1) + "," + (column + 1)).style.color = real ? "white" : "red";
-        if (answer_correct[2] < 0) acquire("box3," + (line + 1) + "," + (column + 1)).style.color = real ? "white" : "red";
-        if (answer_correct[3] < 0) acquire("box4," + (line + 1) + "," + (column + 1)).style.color = real ? "white" : "red";
-    }
+    if (guess_current.length < TOTAL_COLUMNS) real = true;
+    forEachCellForLine(line, (box, column, el) => {
+        if (answer_correct[box] < 0) {
+            el.style.color = real ? "white" : "red";
+        }
+    });
 }
 
 last_daily = null;
@@ -1387,34 +1316,25 @@ function update_local_storage() {
 
 
 function clear_line(line) {
-    for (var column = 0; column < 5; column++) {
-        clear(acquire("box1," + (line + 1) + "," + (column + 1)), "");
-        acquire("box1," + (line + 1) + "," + (column + 1)).style.color = "white";
-        acquire("box1," + (line + 1) + "," + (column + 1)).style.backgroundColor = "rgb(24, 26, 27)";
-        clear(acquire("box2," + (line + 1) + "," + (column + 1)), "");
-        acquire("box2," + (line + 1) + "," + (column + 1)).style.color = "white";
-        acquire("box2," + (line + 1) + "," + (column + 1)).style.backgroundColor = "rgb(24, 26, 27)";
-        clear(acquire("box3," + (line + 1) + "," + (column + 1)), "");
-        acquire("box3," + (line + 1) + "," + (column + 1)).style.color = "white";
-        acquire("box3," + (line + 1) + "," + (column + 1)).style.backgroundColor = "rgb(24, 26, 27)";
-        clear(acquire("box4," + (line + 1) + "," + (column + 1)), "");
-        acquire("box4," + (line + 1) + "," + (column + 1)).style.color = "white";
-        acquire("box4," + (line + 1) + "," + (column + 1)).style.backgroundColor = "rgb(24, 26, 27)";
-    }
+    forEachCellForLine(line, (box, column, el) => {
+        clear(el, "");
+        el.style.color = "white";
+        el.style.backgroundColor = "rgb(24, 26, 27)";
+    });
 }
 
 function identify_guess(i, line, guess) {
     var ans = answer[i].split("");
     var gue = guess.split("");
     var icons = [];
-    for (column = 0; column < 5; column++) {
+    for (column = 0; column < TOTAL_COLUMNS; column++) {
         guess_letters[i][gue[column]] = 0;
-        acquire("box" + (i + 1) + "," + (line + 1) + "," + (column + 1)).style.backgroundColor = "rgb(24, 26, 27)";
+        acquireBox(i, line, column).style.backgroundColor = "rgb(24, 26, 27)";
         icons.push('\u2B1C');
     }
-    for (column = 0; column < 5; column++) {
+    for (column = 0; column < TOTAL_COLUMNS; column++) {
         if (ans[column] == gue[column]) {
-            var b = acquire("box" + (i + 1) + "," + (line + 1) + "," + (column + 1))
+            var b = acquireBox(i, line, column);
             b.style.backgroundColor = "#00cc88";
             b.style.color = "black";
             ans[column] = " ";
@@ -1423,9 +1343,9 @@ function identify_guess(i, line, guess) {
             icons[column] = ("\uD83D\uDFE9");
         }
     }
-    for (column = 0; column < 5; column++) {
+    for (column = 0; column < TOTAL_COLUMNS; column++) {
         if (ans.indexOf(gue[column]) != -1 && ans[column] != gue[column] && gue[column] != " ") {
-            var b = acquire("box" + (i + 1) + "," + (line + 1) + "," + (column + 1))
+            var b = acquireBox(i, line, column);
             b.style.backgroundColor = "#ffcc00";
             b.style.color = "black";
             if (guess_letters[i][gue[column]] != 2) guess_letters[i][gue[column]] = 1;
@@ -1518,40 +1438,27 @@ acquire("share").onclick = function() {
 acquire("share_clipboard").onclick = function() {
     do_share(true, "clipboard");
 }
-acquire("share_image").onclick = function() {
-    do_share(true, "image");
-}
+// acquire("share_image").onclick = function() {
+//     do_share(true, "image");
+// }
 acquire("reset_free").onclick = function() {
     vibrate();
-    if (isInWebViewiOS || confirm("Are you sure you want to start a new Free Quordle? (The current game will be deleted)")) {
+    if (isInWebViewiOS || confirm("Are you sure you want to start a new Free Octordle? (The current game will be deleted)")) {
         window.localStorage.removeItem("free_guesses");
         window.localStorage.removeItem("last_free");
         initFree();
     }
 }
 
+const emojiMap = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟", "🕚", "🕛", "🕐", "🕑"]
+
 function get_num_emoji(num) {
     if (num < 0) {
         return "\uD83D\uDFE5"
-    } else if (num === 0) {
-        return "1️⃣";
-    } else if (num === 1) {
-        return "2️⃣";
-    } else if (num === 2) {
-        return "3️⃣";
-    } else if (num === 3) {
-        return "4️⃣";
-    } else if (num === 4) {
-        return "5️⃣";
-    } else if (num === 5) {
-        return "6️⃣";
-    } else if (num === 6) {
-        return "7️⃣";
-    } else if (num === 7) {
-        return "8️⃣";
-    } else if (num === 8) {
-        return "9️⃣";
+    } else if(num < emojiMap.length) {
+        return emojiMap[num];
     }
+    return "❓";
 }
 
 function get_next_color_from_emojis(emojis) {
@@ -1613,12 +1520,28 @@ function do_share(copy, shareType) {
     if (answer_correct[2] >= 0 && answer_correct[3] >= 0) {
         l2 = Math.max(answer_correct[2], answer_correct[3])
     }
+    var l3 = line - 1;
+    if (answer_correct[4] >= 0 && answer_correct[5] >= 0) {
+        l3 = Math.max(answer_correct[4], answer_correct[5])
+    }
+    var l4 = line - 1;
+    if (answer_correct[6] >= 0 && answer_correct[7] >= 0) {
+        l4 = Math.max(answer_correct[6], answer_correct[7])
+    }
     for (var i = 0; i <= l1; i++) {
         text_share += share[0][i] + " " + share[1][i] + "\n";
     }
     text_share += "\n"
     for (var i = 0; i <= l2; i++) {
         text_share += share[2][i] + " " + share[3][i] + "\n";
+    }
+    text_share += "\n"
+    for (var i = 0; i <= l3; i++) {
+        text_share += share[4][i] + " " + share[5][i] + "\n";
+    }
+    text_share += "\n"
+    for (var i = 0; i <= l4; i++) {
+        text_share += share[6][i] + " " + share[7][i] + "\n";
     }
 
     if (copy && window.gtag) {
@@ -1655,7 +1578,7 @@ function do_share(copy, shareType) {
             var textPadding = size / 4;
             const canvas = document.querySelector("#canvas");
             canvas.width = (size + padding) * 11 - padding
-            canvas.height = (size + padding) * (l1 + 1 + l2 + 1 + 4) - padding;
+            canvas.height = (size + padding) * (l1 + 1 + l2 + 1 + l3 + 1 + l4 + 1 + 4) - padding;
             const ctx = canvas.getContext("2d");
             ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -1694,12 +1617,12 @@ function do_share(copy, shareType) {
             ctx.textBaseline = "alphabetic";
             ctx.fillStyle = "#ffffff";
 
-            var titleText = daily_mode ? "Daily Quordle #" + seed.toString(10) : "Quordle";
+            var titleText = daily_mode ? "Daily Octordle #" + seed.toString(10) : "Octordle";
             var metrics = ctx.measureText(titleText);
             var fontHeight = metrics.actualBoundingBoxAscent;
             ctx.fillText(titleText, canvas.width / 2, y * (size + padding) + size - (size - fontHeight) / 2, canvas.width - textPadding * 2);
             y++;
-            for (var row = 0; row < 2; row++) {
+            for (var row = 0; row < 4; row++) {
                 for (var i = 0; i < 2; i++) {
                     ctx.fillStyle = answer_correct[i + row * 2] >= 0 ? "#00a6ed" : "#f8312f";
                     var dir = (i * 2 - 1)
@@ -1776,8 +1699,60 @@ function do_share(copy, shareType) {
                 y++;
             }
 
+            // draw words 5 + 6
+            for (var i = 0; i <= l3; i++) {
+                var emojiStr = share[4][i];
+                x = 0;
+                while (emojiStr) {
+                    var pair = get_next_color_from_emojis(emojiStr)
+                    var color = pair[0]
+                    emojiStr = pair[1]
+                    ctx.fillStyle = color;
+                    roundRect(ctx, x * (size + padding), y * (size + padding), size, size, radius);
+                    x++;
+                }
+
+                emojiStr = share[5][i];
+                x = 6;
+                while (emojiStr) {
+                    var pair = get_next_color_from_emojis(emojiStr)
+                    var color = pair[0]
+                    emojiStr = pair[1]
+                    ctx.fillStyle = color;
+                    roundRect(ctx, x * (size + padding), y * (size + padding), size, size, radius);
+                    x++;
+                }
+                y++;
+            }
+
+            // draw words 7 + 8
+            for (var i = 0; i <= l3; i++) {
+                var emojiStr = share[6][i];
+                x = 0;
+                while (emojiStr) {
+                    var pair = get_next_color_from_emojis(emojiStr)
+                    var color = pair[0]
+                    emojiStr = pair[1]
+                    ctx.fillStyle = color;
+                    roundRect(ctx, x * (size + padding), y * (size + padding), size, size, radius);
+                    x++;
+                }
+
+                emojiStr = share[7][i];
+                x = 6;
+                while (emojiStr) {
+                    var pair = get_next_color_from_emojis(emojiStr)
+                    var color = pair[0]
+                    emojiStr = pair[1]
+                    ctx.fillStyle = color;
+                    roundRect(ctx, x * (size + padding), y * (size + padding), size, size, radius);
+                    x++;
+                }
+                y++;
+            }
+
             canvas.toBlob(function(blob) {
-                var file = new File([blob], "quordle.png", { type: "image/png" });
+                var file = new File([blob], "octordle.png", { type: "image/png" });
                 navigator.share({
                     files: [file],
                     text: text_mobile_share
@@ -1834,7 +1809,9 @@ window.onresize = function() {
 }
 window.onresize();
 
+setupBoxes();
 onStateChange();
+
 </script>
 </body>
 </html>
