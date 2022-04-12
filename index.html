@@ -1774,14 +1774,14 @@ function do_share(copy, shareType) {
 }
 
 function render_bg_keys() {
-    var keys = "abcdefghijklmnopqrstuvwxyz".split(""),
+    var keys = "abcdefghijklmnopqrstuvwxyz".split("")
 
     var pos = " 50%"
     if (answer_correct[0] < 0 && answer_correct[1] >= 0) pos = " 90%";
     if (answer_correct[1] < 0 && answer_correct[0] >= 0) pos = " 10%";
 
     for (k in keys) {
-        var gradStrArr = [];
+        var gradStrArr = []
         var keyGuessed = false
         var keyColors = ["rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)", "rgb(24, 26, 27)"]
         var colorOptions = ["#919191", "#ffcc00", "#00cc88"]
