@@ -1221,23 +1221,40 @@ function restart() {
         }
         rnd = new MersenneTwister(seed);
     } else if (free_mode) {
-        if (!no_localstorage) {
-            try {
-                var freeSeed = window.localStorage.getItem("oct_last_free");
-                if (freeSeed) {
-                    rnd = new MersenneTwister(Number(freeSeed));
-                } else {
-                    freeSeed = new Date().getTime();
-                    window.localStorage.setItem("oct_last_free", freeSeed);
-                    rnd = new MersenneTwister(freeSeed);
+        // Parse the seed from the URL parameters for free mode
+        var params = new URLSearchParams(location.search);
+        var seedParam = params.get("seed");
+        if (seedParam) {
+            rnd = new MersenneTwister(Number(seedParam));
+            window.localStorage.setItem("oct_last_free", Number(seedParam));
+        } else{
+            if(!no_localstorage){
+                try {
+                    seedParam = window.localStorage.getItem("oct_last_free");
+                    if (seedParam) {
+                        rnd = new MersenneTwister(Number(seedParam));
+                    } else {
+                        seedParam = new Date().getTime();
+                        window.localStorage.setItem("oct_last_free", seedParam);
+                        rnd = new MersenneTwister(seedParam);
+                    }
+                } catch (e) {
+                    no_localstorage = true;
                 }
-            } catch (e) {
-                no_localstorage = true;
-            }
+            } else{
+                // If no seed is provided, generate a new one
+                seedParam = new Date().getTime();
+                rnd = new MersenneTwister(seedParam);
+            } 
+            // Update the URL parameters with the new seed
+            var paramsToSet = {
+                mode: "free",
+                seed: seedParam
+            };
+            // Call pushHistory here to update URL
+            pushHistory(paramsToSet); 
         }
-        if (!rnd) {
-            rnd = new MersenneTwister();
-        }
+
         printclear(acquire("game_title"), "random octoordle");
     }
     rnd.genrand_int31();
@@ -1443,7 +1460,7 @@ acquire("share_clipboard").onclick = function() {
 // }
 acquire("reset_free").onclick = function() {
     vibrate();
-    if (isInWebViewiOS || confirm("Are you sure you want to start a new Free Octoordle? (The current game will be deleted)")) {
+    if (isInWebViewiOS || confirm("Weet je zeker dat je een nieuwe vrij octoordle wil starten (het huidige spel zal worden verwijderd)")) {
         window.localStorage.removeItem("oct_free_guesses");
         window.localStorage.removeItem("oct_last_free");
         initFree();
@@ -1516,10 +1533,10 @@ function do_share(copy, shareType) {
             get_num_emoji(answer_correct[5]) + (shouldShowWords ? " " + answer[4].toUpperCase() + " - " + answer[5].toUpperCase() : "") + "\n" +
             get_num_emoji(answer_correct[6]) +
             get_num_emoji(answer_correct[7]) + (shouldShowWords ? " " + answer[6].toUpperCase() + " - " + answer[7].toUpperCase() : "");
-
         }
 
-    text_share += "\neanker.nl/octoordle";
+    var searchParams = new URLSearchParams(location.search);
+    text_share += "\neanker.nl/octoordle?" + searchParams;
     text_mobile_share = text_share
     text_share += "\n"
 
