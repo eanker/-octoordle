@@ -1225,18 +1225,15 @@ function restart() {
         var params = new URLSearchParams(location.search);
         var seedParam = params.get("seed");
         if (seedParam) {
-            rnd = new MersenneTwister(Number(seedParam));
-            window.localStorage.setItem("oct_last_free", Number(seedParam));
+            // rnd = new MersenneTwister(Number(seedParam));
+            window.localStorage.setItem("oct_last_free", seedParam);
         } else{
             if(!no_localstorage){
                 try {
                     seedParam = window.localStorage.getItem("oct_last_free");
-                    if (seedParam) {
-                        rnd = new MersenneTwister(Number(seedParam));
-                    } else {
+                    if (!seedParam) {
                         seedParam = new Date().getTime();
                         window.localStorage.setItem("oct_last_free", seedParam);
-                        rnd = new MersenneTwister(seedParam);
                     }
                 } catch (e) {
                     no_localstorage = true;
@@ -1244,7 +1241,6 @@ function restart() {
             } else{
                 // If no seed is provided, generate a new one
                 seedParam = new Date().getTime();
-                rnd = new MersenneTwister(seedParam);
             } 
             // Update the URL parameters with the new seed
             var paramsToSet = {
@@ -1254,7 +1250,7 @@ function restart() {
             // Call pushHistory here to update URL
             pushHistory(paramsToSet); 
         }
-
+        rnd = new MersenneTwister(Number(seedParam));
         printclear(acquire("game_title"), "random octoordle");
     }
     rnd.genrand_int31();
@@ -1463,6 +1459,7 @@ acquire("reset_free").onclick = function() {
     if (isInWebViewiOS || confirm("Weet je zeker dat je een nieuwe vrij octoordle wil starten (het huidige spel zal worden verwijderd)")) {
         window.localStorage.removeItem("oct_free_guesses");
         window.localStorage.removeItem("oct_last_free");
+		pushHistory({seed: undefined})
         initFree();
     }
 }
